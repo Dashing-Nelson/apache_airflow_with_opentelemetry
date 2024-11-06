@@ -1,5 +1,36 @@
 # apache_airflow_with_opentelemetry
 
+# Introduction
+This setup is intended for local development and testing purposes. It is not recommended for production deployments. The configuration allows you to experiment with Airflow and its integrations with various monitoring and tracing tools.
+
+# Prerequisites
+Docker installed on your machine
+Docker Compose installed (if not included with Docker)
+
+# Services Overview
+The Docker Compose configuration includes the following services:
+
+# Airflow Components
+- airflow-webserver: The web interface for Apache Airflow.
+- airflow-scheduler: Monitors and triggers scheduled tasks.
+- airflow-worker: Executes the tasks queued by the scheduler.
+- airflow-triggerer: Handles deferred tasks.
+- airflow-init: Initializes the Airflow environment (database migrations, user creation).
+# Databases
+- postgres: PostgreSQL database used by Airflow for metadata storage.
+- mysql: MySQL database for testing purposes (e.g., sample datasets).
+- Message Broker
+- redis: In-memory data store used as a message broker for CeleryExecutor.
+# Database Management
+- adminer: Web-based database management tool for MySQL.
+# Monitoring and Tracing
+- jaeger: Distributed tracing system for microservices.
+- hotrod: A sample application to generate tracing data for Jaeger.
+- otel-collector: OpenTelemetry Collector to process and export telemetry data.
+- prometheus: Monitoring system to collect metrics from the services.
+- grafana: Analytics platform to visualize data collected by Prometheus.
+
+
 # To start the container
 1. Start the containers by running `docker-compose up`. wait for the process to complete
 2. Go to [the Apache Airflow dashboard at localhost:8080](localhost:8080). Use `airflow` as the username and password.
@@ -18,5 +49,5 @@
 6. select `airflow_dagrun_duration_success_sleep_random{}`
 7. This will plot a graph which could be added to the dashboard
 
-
-
+# License
+This project is licensed under the Apache License, Version 2.0. See the LICENSE file for details.
