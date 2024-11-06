@@ -2,6 +2,7 @@
 
 # Introduction
 This repository provides a Docker Compose configuration to set up an Apache Airflow cluster using the CeleryExecutor. It includes additional services like Redis, PostgreSQL, MySQL, Adminer, Jaeger, OpenTelemetry Collector, Prometheus, and Grafana to enhance functionality, monitoring, and tracing capabilities.
+
 This setup is intended for local development and testing purposes. It is not recommended for production deployments. The configuration allows you to experiment with Airflow and its integrations with various monitoring and tracing tools.
 
 # Prerequisites
