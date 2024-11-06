@@ -4,12 +4,14 @@ from airflow import DAG
 from airflow.decorators import task
 from airflow.utils.timezone import datetime
 from datetime import timedelta
-from random import randint
+from random import randint, choice
 
 
 @task
 def task1():
     time.sleep(randint(1, 10))
+    if choice([True, False]):
+        raise Exception
 
 
 with DAG(
